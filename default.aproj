@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312"?>
+<project ver="8" name="tv" libEmbed="true" icon="tv.ico" ui="win" output="tv.exe" CompanyName="hook747" FileDescription="tv" LegalCopyright="Copyright (C) hook747 2015" ProductName="tv" InternalName="tv" FileVersion="0.0.0.14" ProductVersion="0.0.0.14" publishDir="/Publish/">
+	<file name="main.aau" path="main.aau" comment="main.aau"/>
+	<folder name="资源文件" path="res" embed="true">
+		<file name="main.html" path="res\main.html" comment="res\main.html"/>
+		<folder name="styles" path="res\styles" comment="res\styles" embed="false">
+			<file name="main.css" path="res\styles\main.css" comment="res\styles\main.css"/>
+			<file name="base.css" path="res\styles\base.css" comment="res\styles\base.css"/>
+			<folder name="images" path="res\styles\images" comment="res\styles\images" embed="false">
+				<file name="logo.jpg" path="res\styles\images\logo.jpg" comment="res\styles\images\logo.jpg"/>
+				<file name="live.png" path="res\styles\images\live.png" comment="res\styles\images\live.png"/>
+			</folder>
+		</folder>
+	</folder>
+	<folder name="config" path="config" comment="目录" embed="false">
+		<file name="c.dat" path="config\c.dat" comment="config\c.dat"/>
+	</folder>
+</project>

@@ -1,0 +1,36 @@
+import win.ui;
+/*DSG{{*/
+mainForm = ..win.form(text="TV - live player";right=968;bottom=590;border="none")
+mainForm.add()
+/*}}*/
+
+import web.layout; 
+import web.layout.behavior.windowCommand;
+import web.layout.behavior.main.player;
+import web.layout.behavior.main.channle;
+
+wbLayout = web.layout( mainForm );
+
+if( _STUDIO_INVOKED ){
+	import web.layout.debug;
+	wbLayout.attachEventHandler( web.layout.debug );
+}
+
+wbLayout.go("/res/main.html");
+
+mainForm.wndproc = function(hwnd,message,wParam,lParam){ 	
+	select(message) {
+		case 0x100/*_WM_KEYDOWN*/ {
+			if(wParam == 0x74/*_VK_F5*/) {
+				..web.layout.behavior.main.player.init();
+				mainForm.msgbox( "频道列表已更新!");
+			}			
+		}
+	}
+}
+ 
+import win.ui.shadow;
+win.ui.shadow(mainForm);
+
+mainForm.show() 
+return win.loopMessage(); 

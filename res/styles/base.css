@@ -1,0 +1,57 @@
+﻿html,body{
+    margin:0;
+    height:100%;
+    background:#fff;
+    overflow:hidden;
+}
+body[maximize]{ 
+	border-radius:0;
+}
+body[maximize] #header{
+	border-radius:0;
+}
+#header{
+    height:30px;
+	line-height:30px;
+    background:rgb(123, 138, 148);
+    cursor:default;
+    behavior:windowCommand;
+    overflow:hidden;
+}
+#header .title-bar{
+    margin-right:95px;
+    padding-left:15px;
+    height:30px;
+    font:system;
+    color:#fff; 
+} 
+#header .titlebox{  
+    width:max-intrinsic; 
+    height:30px; 
+    float:right; 
+    margin:0; 
+    overflow-x:hidden;
+}
+#header .titlebox a{ 
+    display:inline-block;
+    width:max-intrinsic; 
+    height:30px;
+    font-family:"Marlett";
+    font-size:14px;
+    padding:0px 4px;
+    color:#fff; 
+    cursor:default; 
+}
+#header .titlebox a[command]:hover{ 
+    background:#6ebccf; 
+}
+#header a[command="window-restore"]{ 
+    content:"2";
+} 
+#container{
+    width:100%; 
+    height:100%%;
+    flow: horizontal;
+    margin:0 auto; 
+    overflow:hidden;  
+}

@@ -1,0 +1,57 @@
+﻿@set tv_scrollbar {
+	.base { width: 1px; }
+	:root { background-color: #1F1D1D; }
+	:root:hover { }
+	.base, .prev, .next, .next-page, .prev-page { 
+		background-color: transparent; border: none;
+	}
+	.slider { 
+		height:15px;
+		background: #CE3939;
+	}
+	.slider:hover {
+		/*background: #333;*/
+	}
+}
+#channleList {
+	width:200px;
+	height:100%%;
+	background:#0E0E0E;
+	overflow:auto; vertical-scrollbar: tv_scrollbar;
+	padding:15px 0;
+}
+#channleList:hover {
+	assigned!: self:focus = true;
+}
+#player {height:100%%;background:#000000;padding:5px;}
+#playerWidget {	background:#000000;}
+#channelListUl {margin:0;padding:0;}
+#channelListUl li {
+	list-style:none;
+	display:block;
+	width:100%%;
+	height:30px;
+	line-height:30px;
+	color:#FFF;
+	font-size:12px;
+	cursor:pointer;	
+	padding-left:10px;
+	behavior:~url(main.channle);	
+}
+#channelListUl li a {
+	display:block;
+	width:100%%;
+	cursor:pointer;
+	padding-left:23px;
+	foreground:url(/res/styles/images/live.png) no-repeat left center;	
+}
+#channelListUl li:hover {
+	color:#FF0000;
+	background:#000000;
+	opacity:0.9;
+}
+#channelListUl li[selected=selected]{
+	color:#FF0000;
+	background:#000000;
+	opacity:0.9;
+}

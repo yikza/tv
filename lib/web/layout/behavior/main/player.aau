@@ -1,0 +1,49 @@
+
+namespace web.layout.behavior.main.player{
+
+	aPlayer = null;
+
+	init = function() {		
+		var channel = ..wbLayout.getEle("channelListUl");
+		..wbLayout.getEle("channelListUl").innerHTML = "";
+		for line in ..io.lines("/config/c.dat") {
+			var c = ..string.split(..string.trim(line),',');
+			if(#c == 2) {
+				var html = '<li link="'+c[2]+'"><a>'+c[1]+'</a></li>';
+				channel.insertAdjacentHTML("beforeEnd",html);
+			}
+		}	
+	}
+
+	onElementControlCreated = function (ltTarget,ltOwner,reason,behaviorParams) {
+		
+		import thunder.aPlayer;
+		aPlayer = thunder.aPlayer(ltOwner.getCtrl()) 
+		aPlayer.setConfig(8,1);
+		aPlayer.setVolume(100);
+		import gdip.bitmap;
+		var logo = gdip.bitmap($"/res/styles/images/logo.jpg");		
+		aPlayer.setCustomLogo(logo.copyHandle());
+ 		
+		aPlayer.OnDownloadCodec =  function(strCodecPath){ 
+    		if( ! ltOwner.getForm().msgboxTest("当前视频缺少必须的解码器文件，是否现在下载？","TV") ) {
+    		    return;
+         	}	
+    		import zlib.httpFile; 
+   			zlib.httpFile.download("http://aplayer.open.xunlei.com/codecs.zip","正在下载解码器","/download","~\lib\thunder\aPlayer\.res\codecs",,winform)
+    		aPlayer.setConfig( 19 ); 
+		}	
+		
+		ltOwner.sendEvent("onPlayerCreated",1);
+		
+		init();
+	} 
+	
+	onSize = function (ltOwner) {
+		var ltCtrl = ltOwner.getCtrl();
+		if( ltCtrl ) {
+			ltCtrl.adjust(0,0,0);
+		}
+	}
+	
+}
