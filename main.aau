@@ -8,6 +8,7 @@ import web.layout;
 import web.layout.behavior.windowCommand;
 import web.layout.behavior.main.player;
 import web.layout.behavior.main.channle;
+import web.layout.behavior.main.playerControl;
 
 wbLayout = web.layout( mainForm );
 
@@ -23,7 +24,7 @@ mainForm.wndproc = function(hwnd,message,wParam,lParam){
 		case 0x100/*_WM_KEYDOWN*/ {
 			if(wParam == 0x74/*_VK_F5*/) {
 				..web.layout.behavior.main.player.init();
-				mainForm.msgbox( "频道列表已更新!");
+				mainForm.msgbox( "频道列表已更新");
 			}			
 		}
 	}

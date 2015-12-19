@@ -1,5 +1,5 @@
 ﻿@set tv_scrollbar {
-	.base { width: 1px; }
+	.base { width: 2px; }
 	:root { background-color: #1F1D1D; }
 	:root:hover { }
 	.base, .prev, .next, .next-page, .prev-page { 
@@ -7,7 +7,7 @@
 	}
 	.slider { 
 		height:15px;
-		background: #CE3939;
+		background: #000;
 	}
 	.slider:hover {
 		/*background: #333;*/
@@ -46,12 +46,45 @@
 	foreground:url(/res/styles/images/live.png) no-repeat left center;	
 }
 #channelListUl li:hover {
-	color:#FF0000;
+	color:#B70031;
 	background:#000000;
 	opacity:0.9;
 }
 #channelListUl li[selected=selected]{
-	color:#FF0000;
+	color:#B70031;
 	background:#000000;
 	opacity:0.9;
 }
+#controls {
+	height:30px;
+	width:100%%;
+	background: #333;
+	display:table;
+	padding:0px 15px;
+}
+#ctrl-wrap {	
+	width:100%%;height:100%%;
+	display:table-cell;vertical-align:middle;
+	flow:horizontal;
+}
+#ctrl-left,#ctrl-right {
+	flow:horizontal;
+	width:120px;
+}
+#ctrl-left {text-align:left;}
+#ctrl-center {
+	width:100%%;
+	flow:horizontal;
+	padding:0 30px 0 10px;
+}
+.ctrl-btn {height: 16px; width:16px;margin-right:25px; overflow: hidden; behavior:~url(main.playerControl);}
+#ctrlChannel {background: url(/res/styles/images/setting.png);}
+#ctrlOpen {background: url(/res/styles/images/next.png);}
+#ctrlPlay {background: url(/res/styles/images/play.png);}
+#ctrlMute {width:19px; height: 23px; background: url(/res/styles/images/volume.png); behavior:~url(main.playerControl);}
+#ctrlVolume {margin-top:5px;behavior:~url(main.playerControl);}
+#ctrlVolume img {display: none; width:7px; height:11px; overflow:hidden;}
+#ctrlVolume img {display: block; background-image: none;background-color: #f26c4f; foreground-image: none; }
+#ctrlProgress {margin-top:8px;width:100%%;behavior:~url(main.playerControl);}
+#ctrlProgress img {width:7px; height:11px;display: block; background-image: none;background-color: #f26c4f; foreground-image: none; }
+#timeshow {width:150px;line-height: 30px;color:#FFF;font-size:12px;}
