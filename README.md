@@ -1,7 +1,8 @@
 ![Logo](https://raw.githubusercontent.com/hook747/tv/master/tv.ico)
 
 ## TV player
-A simple video player for http/ftp/mms/rtsp/rtmp/hls/m3u
+A simple video player for http/ftp/mms/rtsp/rtmp/hls/m3u 
+
 update:
 Dec,20 add local file play support
 
