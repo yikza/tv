@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="gb2312"?>
-<project ver="8" name="tv" libEmbed="true" icon="tv.ico" ui="win" output="tv.exe" CompanyName="hook747" FileDescription="tv" LegalCopyright="Copyright (C) hook747 2015" ProductName="tv" InternalName="tv" FileVersion="0.0.0.14" ProductVersion="0.0.0.14" publishDir="/Publish/">
+<project ver="8" name="tv" libEmbed="true" icon="tv.ico" ui="win" output="tv.exe" CompanyName="hikdo" FileDescription="tv" LegalCopyright="Copyright (C) hikdo 2015" ProductName="tv" InternalName="tv" FileVersion="0.0.0.31" ProductVersion="0.0.0.31" publishDir="/Publish/">
 	<file name="main.aau" path="main.aau" comment="main.aau"/>
 	<folder name="资源文件" path="res" embed="true">
 		<file name="main.html" path="res\main.html" comment="res\main.html"/>
-		<folder name="styles" path="res\styles" comment="res\styles" embed="false">
+		<file name="about.html" path="res\about.html" comment="res\about.html"/>
+		<folder name="styles" path="res\styles" comment="res\styles">
 			<file name="main.css" path="res\styles\main.css" comment="res\styles\main.css"/>
 			<file name="base.css" path="res\styles\base.css" comment="res\styles\base.css"/>
-			<folder name="images" path="res\styles\images" comment="res\styles\images" embed="false">
+			<folder name="images" path="res\styles\images" comment="res\styles\images">
+				<file name="volume.png" path="res\styles\images\volume.png" comment="res\styles\images\volume.png"/>
+				<file name="setting.png" path="res\styles\images\setting.png" comment="res\styles\images\setting.png"/>
+				<file name="play.png" path="res\styles\images\play.png" comment="res\styles\images\play.png"/>
+				<file name="pause.png" path="res\styles\images\pause.png" comment="res\styles\images\pause.png"/>
+				<file name="open.png" path="res\styles\images\open.png" comment="res\styles\images\open.png"/>
 				<file name="logo.jpg" path="res\styles\images\logo.jpg" comment="res\styles\images\logo.jpg"/>
 				<file name="live.png" path="res\styles\images\live.png" comment="res\styles\images\live.png"/>
+				<file name="app.png" path="res\styles\images\app.png" comment="res\styles\images\app.png"/>
 			</folder>
 		</folder>
 	</folder>
 	<folder name="config" path="config" comment="目录" embed="false">
 		<file name="c.dat" path="config\c.dat" comment="config\c.dat"/>
+	</folder>
+	<folder name="筛选器" path="E:\AAuto\project\tv\筛选器" comment="目录" embed="false"/>
+	<folder name="form" path="form" comment="目录" embed="true">
+		<file name="about.aau" path="form\about.aau" comment="form\about.aau"/>
 	</folder>
 </project>

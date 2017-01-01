@@ -2,19 +2,26 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="styles/base.css" />
-</head> 
+  <style type="text/css">  
+  #intro label { display:block;text-align:center;line-height:24px;}
+  #intro label span { color:#333;text-decoration:underline;cursor:pointer;behavior:~ url(about.link);}
+  #intro label span:hover {color:red;}
+  #ptitle {font-weight:700;font-size:16px;color:#333;padding:20px 0 10px 0;}
+  </style>
 <body>
-    <!-- 界面顶栏 -->
     <div id="header"> 
           <div class="titlebox">
 			<a command="window-close" onclick="closeWindow()">r</a>
 		  </div> 
-		  <div class="title-bar" command="window-caption"> <span class=title>关于</span></div>
+		  <div class="title-bar" command="window-caption"><i class="logo"></i><span class=title>关于..</span></div>
     </div> 
-    
-    <!-- 界面中部内容栏 -->
     <div id="container"> 
-		      
+		  <div id="intro">
+			<label id="ptitle">Tv player</label>			
+			<label><span id="linkAplayer" link="http://aplayer.open.xunlei.com/">Aplayer</span></label>
+			<label>Jan 1,2017</label>
+			<label><span id="linkMe" link="https://github.com/hikdo/tv">https://github.com/hikdo/tv</span></label>			
+		  </div>
     </div>
     
 </body>

@@ -1,4 +1,8 @@
-
+/*
+ *	tv
+ *  https://github.com/hikdo
+ *	January 1,2017
+ */
 namespace web.layout.behavior.main.playerControl{
 
 	onMouseClick = {

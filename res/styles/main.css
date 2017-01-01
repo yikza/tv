@@ -1,6 +1,6 @@
 ﻿@set tv_scrollbar {
 	.base { width: 2px; }
-	:root { background-color: #1F1D1D; }
+	:root { background-color: #0E0E0E; }
 	:root:hover { }
 	.base, .prev, .next, .next-page, .prev-page { 
 		background-color: transparent; border: none;
@@ -12,6 +12,9 @@
 	.slider:hover {
 		/*background: #333;*/
 	}
+}
+#aboutBtn {
+	behavior:~ "main.button";
 }
 #channleList {
 	width:200px;
@@ -77,9 +80,9 @@
 	flow:horizontal;
 	padding:0 30px 0 10px;
 }
-.ctrl-btn {height: 16px; width:16px;margin-right:25px; overflow: hidden; behavior:~url(main.playerControl);}
+.ctrl-btn {height: 16px; width:16px;margin-right:25px; cursor:pointer; overflow: hidden; behavior:~url(main.playerControl);}
 #ctrlChannel {background: url(/res/styles/images/setting.png);}
-#ctrlOpen {background: url(/res/styles/images/next.png);}
+#ctrlOpen {background: url(/res/styles/images/open.png);}
 #ctrlPlay {background: url(/res/styles/images/play.png);}
 #ctrlMute {width:19px; height: 23px; background: url(/res/styles/images/volume.png); behavior:~url(main.playerControl);}
 #ctrlVolume {margin-top:5px;behavior:~url(main.playerControl);}

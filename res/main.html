@@ -5,15 +5,15 @@
   <link rel="stylesheet" href="styles/main.css" />
 </head> 
 <body>
-    <!-- 界面顶栏 -->
+    <!-- header -->
     <div id="header"> 
           <div class="titlebox">
-			<a command="window-min" onclick="minWindow()">0</a><a command="window-max">1</a><a command="window-close" onclick="closeWindow()">r</a>
+			<a id="aboutBtn">7</a><a command="window-min" onclick="minWindow()">0</a><a command="window-max">1</a><a command="window-close" onclick="closeWindow()">r</a>
 		  </div> 
-		  <div class="title-bar" command="window-caption"> <span class="title">TV - live player <span id="buffertips"></span></span></div>
+		  <div class="title-bar" command="window-caption"><i class="logo"></i><div class="title">TV - live player <span id="buffertips"></span></div></div>
     </div> 
 	
-    <!-- 界面中部内容栏 -->
+    <!-- content -->
     <div id="container"> 
 		<div id="player">
 			<widget cls="static" id="playerWidget" style="behavior:~url(main.player);width:100%%;height:100%%"></widget>

@@ -20,11 +20,16 @@ body[maximize] #header{
 }
 #header .title-bar{
     margin-right:95px;
-    padding-left:15px;
+    padding-left:5px;
     height:30px;
     font:system;
     color:#fff; 
 } 
+#header .title-bar .title {
+	float:left;
+	margin-left:8px;
+	display:inline-block;
+}
 #header .titlebox{  
     width:max-intrinsic; 
     height:30px; 
@@ -48,6 +53,14 @@ body[maximize] #header{
 #header a[command="window-restore"]{ 
     content:"2";
 } 
+#header i.logo {
+	float:left;
+	display:inline-block;
+	margin-top:4px;
+	width:24px;
+	height:24px;
+	background:url(images/app.png);
+}
 #container{
     width:100%; 
     height:100%%;

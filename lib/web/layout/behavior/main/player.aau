@@ -1,4 +1,8 @@
-
+/*
+ *	tv
+ *  https://github.com/hikdo
+ *	January 1,2017
+ */
 namespace web.layout.behavior.main.player{
 
 	aPlayer = null;
@@ -9,17 +13,27 @@ namespace web.layout.behavior.main.player{
 		var channel = ..wbLayout.getEle("channelListUl");
 		..wbLayout.getEle("channelListUl").innerHTML = "";
 		..math.randomize(..time.tick());
-		for line in ..io.lines("/config/c.dat") {
-			var c = ..string.split(..string.trim(line),',');
-			if(#c == 2) {
-				var html = '<li link="'+c[2]+'"><a>'+c[1]+'</a></li>';
-				channel.insertAdjacentHTML("beforeEnd",html);
-			}
-		}
+		import fsys;
+		fsys.enum( "/config", "*.ini",
+			function(dir,filename,fullpath,findData){ 
+				if(filename){ 
+					try {
+						for line in ..io.lines(fullpath) {
+							var c = ..string.split(..string.trim(line),',');
+							if(#c == 2) {
+								var html = '<li link="'+c[2]+'"><a>'+c[1]+'</a></li>';
+								channel.insertAdjacentHTML("beforeEnd",html);
+							}
+						}
+					} catch (e) {}					
+				}				
+			} 
+			,false /* ignore subdir */
+		);	
+		//..console.debug("inited");
 	}
 
-	onElementControlCreated = function (ltTarget,ltOwner,reason,behaviorParams) {
-		
+	onElementControlCreated = function (ltTarget,ltOwner,reason,behaviorParams) {		
 		import thunder.aPlayer;
 		aPlayer = thunder.aPlayer(ltOwner.getCtrl()) 
 		aPlayer.setConfig(8,1);
@@ -29,11 +43,10 @@ namespace web.layout.behavior.main.player{
 		aPlayer.setCustomLogo(logo.copyHandle());
  		
 		aPlayer.OnDownloadCodec =  function(strCodecPath){ 
-    		if( ! ltOwner.getForm().msgboxTest("当前视频缺少必须的解码器文件，是否现在下载？","TV") ) {
-    		    return;
+    		if( ltOwner.getForm().msgboxTest("当前视频缺少必须的解码器文件，是否现在下载？","TV") ) {
+    		    import zlib.httpFile; 
+   				zlib.httpFile.download("http://aplayer.open.xunlei.com/codecs.zip","正在下载解码器","/download","~\lib\thunder\aPlayer\.res\codecs",,..mainForm);
          	}	
-    		import zlib.httpFile; 
-   			zlib.httpFile.download("http://aplayer.open.xunlei.com/codecs.zip","正在下载解码器","/download","~\lib\thunder\aPlayer\.res\codecs",,..mainForm)
     		aPlayer.setConfig( 19 ); 
 		}	
 		
@@ -42,7 +55,7 @@ namespace web.layout.behavior.main.player{
 		    if(progress < 0 || progress > 99） {
 		    	..wbLayout.getEle("buffertips").innerHTML = "";		    	
 		    } else {
-		    	..wbLayout.getEle("buffertips").innerHTML = " - 缓冲中..("+progress+"%)";
+		    	..wbLayout.getEle("buffertips").innerHTML = " - buffering..("+progress+"%)";
 		    }
 		}
 		
