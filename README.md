@@ -2,8 +2,7 @@
 A simple video player for http/ftp/mms/rtsp/rtmp/hls/m3u 
 
 update:
-Jan,1 2017 auto detect channel change
------------------------------------------
+Jan,1  auto detect channel change
 Dec,20 add local file play support
 
 ## demo
